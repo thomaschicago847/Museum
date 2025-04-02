@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B Minor Mass</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            margin: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 1342px;
+            height: 755px;
+        }
+        #player {
+            width: 100%;
+            height: 100%;
+        }
+        #timer {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        /* Subtitle styling */
+        #subtitle {
+            position: absolute;
+            bottom: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            font-size: 24px;
+            border-radius: 5px;
+            text-align: center;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <div id="player"></div>
+        <div id="timer">Time Left: --:--</div>
+        <div id="subtitle"></div> <!-- Subtitle container -->
+    </div>
+
+    <script>
+        let player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                videoId: '3FLbiDrn8IE', // Replace with your video ID
+                playerVars: { 'modestbranding': 1, 'rel': 0 },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            updateTimer();
+            checkSubtitles();
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                updateTimer();
+                checkSubtitles();
+            }
+        }
+
+        function updateTimer() {
+            setInterval(() => {
+                if (player && player.getCurrentTime) {
+                    let currentTime = player.getCurrentTime();
+                    let duration = player.getDuration();
+                    let timeLeft = duration - currentTime;
+
+                    let minutes = Math.floor(timeLeft / 60);
+                    let seconds = Math.floor(timeLeft % 60);
+                    document.getElementById('timer').innerText = `Time Left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                }
+            }, 1000);
+        }
+
+        function checkSubtitles() {
+            setInterval(() => {
+                if (player && player.getCurrentTime) {
+                    let currentTime = Math.floor(player.getCurrentTime());
+                    showSubtitle(currentTime);
+                }
+            }, 1000);
+        }
+
+        function showSubtitle(time) {
+            let subtitleText = "";
+            const subtitles = [
+                { time: 5, text: "Kyrie I (chorus) - Fugue" },
+                { time: 664, text: "Christe Eleison (duet)" },
+                { time: 954, text: "Kyrie II (chorus) - Contrapuntal Fugue" },
+                { time: 1183, text: "Gloria in excelsis Deo (chorus) - Trumpets and Drums" },
+                { time: 1286, text: "Et in terra pax (chorus)" },
+                { time: 1566, text: "Laudamus te (aria)" },
+                { time: 1183, text: "Gratias agimus tibi (chorus)" },
+                { time: 1999, text: "Domine Deus (duet)" },
+                { time: 2319, text: "Qui tollis (chorus)" },
+                { time: 2499, text: "Qui sedes (aria)" },
+                { time: 2750, text: "Quoniam tu solus sanctus (aria)" },
+                { time: 3033, text: "Cum sancto spiritu (choir)" },
+                { time: 3254, text: "Credo in unum Deum (choir)" },
+                { time: 3373, text: "Patrem omnipotentem (choir)" },
+                { time: 3495, text: "Et in unum Dominum (duet)" },
+                { time: 3758, text: "Et in carnatus est (choir)" },
+                { time: 3952, text: "Crucifixus (choir)" },
+                { time: 4138, text: "Et resurrexit (choir)" },
+                { time: 4376, text: "Et in spiritum sanctum (aria)" },
+                { time: 4693, text: "Confiteor (choir)" },
+                { time: 4938, text: "Et expecto (choir)" },
+                { time: 5070, text: "Sanctus (choir)" },
+                { time: 5218, text: "Pleni sunt caeli" },
+                { time: 5359, text: "Osanna in excelsis (choir)" },
+                { time: 5519, text: "Benedictus qui venit (aria)" },
+                { time: 5782, text: "Osanna in excelsis (choir)" },
+                { time: 5945, text: "Agnus Dei (aria)" },
+                { time: 6317, text: "Dona nobis pacem (choir)" },
+
+            ];
+
+            subtitles.forEach(sub => {
+                if (time === sub.time) {
+                    subtitleText = sub.text;
+                    document.getElementById("subtitle").innerText = subtitleText;
+                    document.getElementById("subtitle").style.display = "block";
+
+                    setTimeout(() => {
+                        document.getElementById("subtitle").style.display = "none";
+                    }, 5000); // Hide after 5 seconds
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

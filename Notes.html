@@ -2,37 +2,202 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=firefox">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes</title>
-</head>
-<body>
-    <h1>Bach B Minor Mass</h1>
-    <p>Bach as Theologian</p>
-        <img src="images/" alt="">
-
-
-
-
-
-</body>
     <style>
         body {
+            font-family: Arial, sans-serif;
             background-color: black;
             color: white;
+            margin: 20px;
         }
-        h1 {
+
+        /* Styling for the TOC container */
+        .toc-container {
+            width: 250px;
+            background: #222;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Hide TOC list initially */
+        .toc-list {
+            display: none;
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-list li {
+            margin: 8px 0;
+        }
+
+        .toc-list a {
+            text-decoration: none;
+            color: #00bfff;
+        }
+
+        .toc-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button styling */
+        .toc-toggle {
+            background: #0077cc;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            border-radius: 5px;
+        }
+
+        .toc-toggle:focus {
+            outline: none;
+        }
+
+        /* Section container */
+        .section-container {
+            margin-top: 20px;
+        }
+
+        .section-content {
+            padding: 20px;
+            background: #333;
+            border-radius: 8px;
+            display: none; /* Sections hidden by default */
+        }
+
+        .section-header {
+            background: #444;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        img {
+            width: 50%;
+            height: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+        .bach-portrait {
+        width: 200px !important; /* Adjust as needed */
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        }
+        h2 {
+            text-align: center;
+        }
+        h3 {
             text-align: center;
         }
         p {
             text-align: center;
         }
-        img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-            
-        }
-    </style>
 
+
+    </style>
+</head>
+<body>
+
+    <!-- Table of Contents -->
+    <div class="toc-container">
+        <button class="toc-toggle" onclick="toggleTOC()">Table of Contents ▼</button>
+        <ul class="toc-list" id="toc">
+            <li><a href="javascript:void(0)" onclick="toggleSection('section1')">Introduction</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('section2')">Kyrie(s)</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('section3')">Crucifixus</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('section4')">Sanctus</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('section5')">Gratias Agimus & Dona Nobis Pacem</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('section6')">The Speaker, Me!</a></li>
+        </ul>
+    </div>
+
+    <!-- Sections -->
+    <div class="section-container">
+        <div class="section-header" onclick="toggleContent('section1')">Introduction</div>
+        <div id="section1" class="section-content">
+            <h3>Bach B Minor Mass</h3>
+            <img src="images/Bach portrait.jpg" alt="J.S. Bach" class="bach-portrait">
+            <p>J.S. Bach portrait</p>
+            <h2>Order of the B Minor Mass</h2>
+            <p>Kyrie [Kyrie I, Christe Eleison, Kyrie II]<br>Gloria<br>Credo<br>Sanctus<br>Osanna, Benedictus, Agnus Dei, Dona Nobis Pacem</p>
+            <h2>Palace of Versailles</h2>
+            <div class="image-container">
+                <img src="images/Versailles.webp" alt="">
+                <img src="images/Versailles.png" alt="">
+            </div>
+            <h2>Parallel Major and Minor Keys</h2>
+            <img src="images/scales.png" alt="">
+        </div>
+
+        <div class="section-header" onclick="toggleContent('section2')">Kyrie(s)</div>
+        <div id="section2" class="section-content">
+            <h2>Kyrie I</h2>
+            <img src="images/Kyrie fugue.png" alt="">
+            <p>Fugue</p>
+            <h2>Kyrie II</h2>
+            <img src="images/Kyrie II fugue.png" alt="">
+        </div>
+
+        <div class="section-header" onclick="toggleContent('section3')">Crucifixus</div>
+        <div id="section3" class="section-content">
+            <h3>A passacaglia with bass-ostinato. The bass line repeats 13-times, a metaphor to the number of strikes used to nail Christ to the cross. Tear motif.</h3>
+            <img src="images/crucifixus beginning.png" alt="">
+            <h3>Descent and modulation to new key, G Major</h3>
+            <img src="images/crucifixus end.png" alt="">
+        </div>
+
+        <div class="section-header" onclick="toggleContent('section4')">Sanctus</div>
+        <div id="section4" class="section-content">
+            <p>6-voices</p>
+            <p>Metaphor to Isaiah's prophecy of Seraphim with 6-wings each.</p>
+            <img src="images/Sanctus.png" alt="">
+        </div>
+
+        <div class="section-header" onclick="toggleContent('section5')">Gratias Agimus & Dona Nobis Pacem</div>
+        <div id="section5" class="section-content">
+            <p>Bach's lasting impact on music history.</p>
+        </div>
+
+        <div class="section-header" onclick="toggleContent('section6')">The Speaker, Me!</div>
+        <div id="section6" class="section-content">
+            <p>Picture, I'm a local Andersonville-onian.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript for TOC and Section Toggle -->
+    <script>
+        function toggleTOC() {
+            let tocList = document.getElementById("toc");
+            if (tocList.style.display === "block") {
+                tocList.style.display = "none";
+            } else {
+                tocList.style.display = "block";
+            }
+        }
+
+        function toggleSection(sectionId) {
+            let sectionContent = document.getElementById(sectionId);
+            if (sectionContent.style.display === "block") {
+                sectionContent.style.display = "none";
+            } else {
+                sectionContent.style.display = "block";
+            }
+        }
+
+        function toggleContent(sectionId) {
+            let sectionContent = document.getElementById(sectionId);
+            if (sectionContent.style.display === "block") {
+                sectionContent.style.display = "none";
+            } else {
+                sectionContent.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
 </html>

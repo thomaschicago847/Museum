@@ -112,33 +112,40 @@
             let subtitleText = "";
             const subtitles = [
                 { time: 5, text: "Kyrie I (chorus) - Fugue" },
-                { time: 664, text: "Christe Eleison (duet)" },
-                { time: 954, text: "Kyrie II (chorus) - Contrapuntal Fugue" },
-                { time: 1183, text: "Gloria in excelsis Deo (chorus) - Trumpets and Drums" },
-                { time: 1286, text: "Et in terra pax (chorus)" },
-                { time: 1566, text: "Laudamus te (aria)" },
-                { time: 1183, text: "Gratias agimus tibi (chorus)" },
-                { time: 1999, text: "Domine Deus (duet)" },
-                { time: 2319, text: "Qui tollis (chorus)" },
-                { time: 2499, text: "Qui sedes (aria)" },
-                { time: 2750, text: "Quoniam tu solus sanctus (aria)" },
-                { time: 3033, text: "Cum sancto spiritu (choir)" },
-                { time: 3254, text: "Credo in unum Deum (choir)" },
-                { time: 3373, text: "Patrem omnipotentem (choir)" },
-                { time: 3495, text: "Et in unum Dominum (duet)" },
-                { time: 3758, text: "Et in carnatus est (choir)" },
+                { time: 170, text: "Subject stated by Tenor" },
+                { time: 180, text: "Subject answered by Alto" },
+                { time: 203, text: "Subject answered by Soprano I" },
+                { time: 216, text: "Subject answered by Soprano II" },
+                { time: 245, text: "Subject answered by Bass" },
+                { time: 644, text: "Ends in B Major" },
+                { time: 664, text: "Christe Eleison (soprano love duet) - God and His Church"},
+                { time: 954, text: "Kyrie II (chorus) - Contrapuntal Fugue in style of Palestrina" },
+                { time: 1183, text: "Gloria begins. Gloria in Excelsis Deo (chorus) - Trumpets and Drums" },
+                { time: 1286, text: "Et in Terra Pax (chorus)" },
+                { time: 1566, text: "Laudamus Te (soprano aria)" },
+                { time: 1810, text: "Gratias Agimus Tibi (chorus)" },
+                { time: 1999, text: "Domine Deus (soprano and tenor duet)" },
+                { time: 2319, text: "Qui Tollis (chorus)" },
+                { time: 2499, text: "Qui Sedes (alto aria)" },
+                { time: 2750, text: "Quoniam Tu Solus Sanctus (bass aria)" },
+                { time: 3033, text: "Cum Sancto Spiritu (choir)" },
+                { time: 3254, text: "Credo in Unum Deum (choir)" },
+                { time: 3373, text: "Patrem Omnipotentem (choir)" },
+                { time: 3495, text: "Et in Unum Dominum (soprano and alto duet in canon)" },
+                { time: 3758, text: "Et in Carnatus Est (choir)" },
                 { time: 3952, text: "Crucifixus (choir)" },
-                { time: 4138, text: "Et resurrexit (choir)" },
-                { time: 4376, text: "Et in spiritum sanctum (aria)" },
+                { time: 4122, text: "Begin modulation to G Major. Christ is buried." },
+                { time: 4138, text: "Et Resurrexit (choir)" },
+                { time: 4376, text: "Et in Spiritum Sanctum (bass aria)" },
                 { time: 4693, text: "Confiteor (choir)" },
-                { time: 4938, text: "Et expecto (choir)" },
-                { time: 5070, text: "Sanctus (choir)" },
-                { time: 5218, text: "Pleni sunt caeli" },
-                { time: 5359, text: "Osanna in excelsis (choir)" },
-                { time: 5519, text: "Benedictus qui venit (aria)" },
-                { time: 5782, text: "Osanna in excelsis (choir)" },
-                { time: 5945, text: "Agnus Dei (aria)" },
-                { time: 6317, text: "Dona nobis pacem (choir)" },
+                { time: 4938, text: "Et Expecto (choir)" },
+                { time: 5070, text: "Sanctus (6 voice choir)" },
+                { time: 5218, text: "Pleni Sunt Caeli (choir)" },
+                { time: 5359, text: "Osanna in Excelsis (choir)" },
+                { time: 5519, text: "Benedictus Qui Venit (tenor aria)" },
+                { time: 5782, text: "Osanna in Excelsis (choir)" },
+                { time: 5945, text: "Agnus Dei (alto aria)" },
+                { time: 6317, text: "Dona Nobis Pacem (choir)" },
 
             ];
 
@@ -150,7 +157,7 @@
 
                     setTimeout(() => {
                         document.getElementById("subtitle").style.display = "none";
-                    }, 5000); // Hide after 5 seconds
+                    }, 10000); // Hide after 5 seconds
                 }
             });
         }

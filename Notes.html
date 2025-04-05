@@ -98,25 +98,20 @@
             text-align: center;
         }
 
-
     </style>
 </head>
 <body>
-
-    <!-- Table of Contents -->
     <div class="toc-container">
         <button class="toc-toggle" onclick="toggleTOC()">Table of Contents ▼</button>
         <ul class="toc-list" id="toc">
             <li><a href="javascript:void(0)" onclick="toggleSection('section1')">Introduction</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleSection('section2')">Kyrie(s)</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleSection('section3')">Crucifixus</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleSection('section4')">Sanctus</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleSection('section5')">Gratias Agimus & Dona Nobis Pacem</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('section2')">Kyrie</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('section3')">Credo</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('section4')">Crucifixus</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('section5')">Sanctus</a></li>
             <li><a href="javascript:void(0)" onclick="toggleSection('section6')">The Speaker, Me!</a></li>
         </ul>
     </div>
-
-    <!-- Sections -->
     <div class="section-container">
         <div class="section-header" onclick="toggleContent('section1')">Introduction</div>
         <div id="section1" class="section-content">
@@ -124,7 +119,7 @@
             <img src="images/Bach portrait.jpg" alt="J.S. Bach" class="bach-portrait">
             <p>J.S. Bach portrait</p>
             <h2>Order of the B Minor Mass</h2>
-            <p>Kyrie [Kyrie I, Christe Eleison, Kyrie II]<br>Gloria<br>Credo<br>Sanctus<br>Osanna, Benedictus, Agnus Dei, Dona Nobis Pacem</p>
+            <p>- Kyrie [Kyrie I, Christe Eleison, Kyrie II]<br>- Gloria<br>- Credo<br>- Sanctus<br>- Osanna, Benedictus, Agnus Dei, Dona Nobis Pacem</p>
             <h2>Palace of Versailles</h2>
             <div class="image-container">
                 <img src="images/Versailles.webp" alt="">
@@ -134,38 +129,43 @@
             <img src="images/scales.png" alt="">
         </div>
 
-        <div class="section-header" onclick="toggleContent('section2')">Kyrie(s)</div>
+        <div class="section-header" onclick="toggleContent('section2')">Kyrie</div>
         <div id="section2" class="section-content">
-            <h2>Kyrie I</h2>
-            <img src="images/Kyrie fugue.png" alt="">
-            <p>Fugue</p>
+            <h2>Kyrie I (fugue)</h2>
+            <img src="images/Kyrie I.png" alt="">
+            <h2>Christe Eleison</h2>
+            <img src="images/Christe.png" alt="">
             <h2>Kyrie II</h2>
-            <img src="images/Kyrie II fugue.png" alt="">
+            <img src="images/Kyrie II.png" alt="">
         </div>
 
-        <div class="section-header" onclick="toggleContent('section3')">Crucifixus</div>
+        <div class="section-header" onclick="toggleContent('section3')">Credo</div>
         <div id="section3" class="section-content">
+            <h2>Credo</h2>
+            <img src="images/Credo.png" alt="">
+            <p>Gregorian Chant</p>
+        </div>
+
+        <div class="section-header" onclick="toggleContent('section4')">Crucifixus</div>
+        <div id="section4" class="section-content">
             <h3>A passacaglia with bass-ostinato. The bass line repeats 13-times, a metaphor to the number of strikes used to nail Christ to the cross. Tear motif.</h3>
             <img src="images/crucifixus beginning.png" alt="">
             <h3>Descent and modulation to new key, G Major</h3>
             <img src="images/crucifixus end.png" alt="">
         </div>
 
-        <div class="section-header" onclick="toggleContent('section4')">Sanctus</div>
-        <div id="section4" class="section-content">
-            <p>6-voices</p>
+        <div class="section-header" onclick="toggleContent('section5')">Sanctus</div>
+        <div id="section5" class="section-content">
+            <h2>6 voices</h2>
             <p>Metaphor to Isaiah's prophecy of Seraphim with 6-wings each.</p>
             <img src="images/Sanctus.png" alt="">
         </div>
 
-        <div class="section-header" onclick="toggleContent('section5')">Gratias Agimus & Dona Nobis Pacem</div>
-        <div id="section5" class="section-content">
-            <p>Bach's lasting impact on music history.</p>
-        </div>
-
         <div class="section-header" onclick="toggleContent('section6')">The Speaker, Me!</div>
         <div id="section6" class="section-content">
-            <p>Picture, I'm a local Andersonville-onian.</p>
+            <h2>Thomas Martin, Musician and Educator</h2>
+            <h3>My goal...</h3><p>To continue presenting monumental works of Classical Music in an aesthetically pleasing and informative way!</p>
+            <img src="images/Me.png" alt="">
         </div>
     </div>
 
